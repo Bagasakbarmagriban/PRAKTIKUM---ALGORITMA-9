@@ -1,0 +1,30 @@
+#Bagas akbar magriban
+#065002400004
+#Latihan 1
+def write(jadi):
+    with open("kepo.txt", "w") as f:
+        f.write(jadi)
+
+
+def read():
+    with open("kepo.txt", "r") as f:
+        return f.read()
+
+
+def main():
+    contents = read()
+    print(contents)
+
+
+x = str(input("Nama: "))
+y = str(input("Umur: "))
+z = str(input("Alamat: "))
+q = str(input("Email: "))
+o = str(input("Dosen Wali: "))
+jadi = ("{}\n{}\n{}\n{}\n{}\n".format(x, y, z, q, o))
+
+print("\nNih guys data yang kamu berikan:")
+write(jadi)
+print()
+main()
+
