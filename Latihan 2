@@ -1,0 +1,60 @@
+#Bagas akbar magriban
+#06500240004
+#Latihan 2
+def buat_dan_tulis_file():
+    nama_file = input("Masukkan Nama File: ")
+    nama = input("Masukkan Namamu: ")
+    nim = input("Masukkan NIM kamu: ")
+    angkatan = input("Masukkan tahun angkatanmu: ")
+
+    with open(nama_file + ".txt", 'w') as file:
+        file.write(f"Nama: {nama}\n")
+        file.write(f"NIM: {nim}\n")
+        file.write(f"Angkatan: {angkatan}\n")
+    
+    print("File Berhasil Dibuat\n")
+
+def baca_file():
+    nama_file = input("Masukkan Nama File: ")
+    try:
+        with open(nama_file + ".txt", 'r') as file:
+            print("\n" + file.read())
+    except FileNotFoundError:
+        print("File tidak ditemukan!\n")
+
+def tambah_text_pada_file():
+    nama_file = input("Masukkan Nama File: ")
+    nama_sahabat = input("Masukkan Nama Sahabatmu: ")
+    catatan = input("Masukkan Catatan Tambahan kamu: ")
+
+    with open(nama_file + ".txt", 'a') as file:
+        file.write(f"Nama Sahabat: {nama_sahabat}\n")
+        file.write(f"Catatan: {catatan}\n")
+    
+    print("Data Berhasil Ditambahkan\n")
+
+def main():
+    while True:
+        print("Program File Handling")
+        print("1. Membuat dan Menulis File")
+        print("2. Membaca File")
+        print("3. Menambahkan Text Pada File")
+        print("4. Keluar Dari Program")
+
+        pilihan = input("Masukkan Pilihan Berupa Angka (1/2/3/4): ")
+
+        if pilihan == '1':
+            buat_dan_tulis_file()
+        elif pilihan == '2':
+            baca_file()
+        elif pilihan == '3':
+            tambah_text_pada_file()
+        elif pilihan == '4':
+            print("Terima Kasih Sudah Menggunakan Program Saya")
+            break
+        else:
+            print("Pilihan tidak valid, silakan coba lagi.\n")
+
+if __name__ == "__main__":
+    main()
+
